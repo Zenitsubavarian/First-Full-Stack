@@ -15,7 +15,9 @@ const CreatePost = () => {
 
         const formData = new FormData(e.target)
 
-        axios.post("http://localhost:3000/create-post", formData)
+        const API = "https://first-full-stack-1-v0b6.onrender.com";
+
+        axios.post(`${API}/create-post`, formData)
             .then((res) => {
                 e.target.reset()
                 setFileName("")

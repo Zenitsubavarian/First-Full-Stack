@@ -5,7 +5,9 @@ const Feed = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:3000/posts")
+        const API = "https://first-full-stack-1-v0b6.onrender.com";
+
+        axios.get(`${API}/posts`)
             .then((res) => {
                 console.log(res.data.posts[0]);
                 setPosts(res.data.posts)
@@ -14,7 +16,7 @@ const Feed = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/delete-post/${id}`)
+            await axios.delete(`${API}/delete-post/${id}`)
             setPosts(posts.filter((post) => post._id !== id))
         } catch (err) {
             console.log(err)
