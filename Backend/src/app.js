@@ -7,7 +7,7 @@ dns.setServers(['1.1.1.1', '8.8.8.8'])
 const app = express();
 const cors = require('cors')
 app.use(cors({
-    origin: "http://localhost:5173"
+    origin: ["http://localhost:5173", "https://first-full-stack-psi.vercel.app"]
 }));
 app.use(express.json());
 const upload = multer({ storage: multer.memoryStorage() })
